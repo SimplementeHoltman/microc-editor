@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QTextEdit, QAction,
 from PyQt5.QtCore import Qt, QUrl
 from PyQt5.QtGui import QDesktopServices
 
-
+#documentación
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
