@@ -83,7 +83,7 @@ class MainWindow(QMainWindow):
         ayuda_menu.addAction(github_proyecto)
 
     def github_proyecto(self):
-        url = QUrl("https://google.com")
+        url = QUrl("https://github.com/SimplementeHoltman/microc-editor")
         QDesktopServices.openUrl(url)
 
     def actualizar_barra_estado(self):
