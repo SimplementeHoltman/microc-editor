@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QTextEdit, QAction,
 from PyQt5.QtCore import Qt, QUrl
 from PyQt5.QtGui import QDesktopServices
 
-#documentación
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -15,7 +14,7 @@ class MainWindow(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle("MicroC Editor")
+        self.setWindowTitle("MicroC Editor - Automatas y Lenguajes")
         self.setGeometry(100, 100, 800, 600)
 
         # Crear widgets
@@ -74,17 +73,13 @@ class MainWindow(QMainWindow):
         # Menú Ayuda
         ayuda_menu = menu_bar.addMenu("Ayuda")
 
-        ayuda_action = QAction("Ayuda", self)
+        ayuda_action = QAction("Acerca de", self)
         ayuda_action.triggered.connect(self.mostrar_ayuda)
         ayuda_menu.addAction(ayuda_action)
 
         github_proyecto = QAction("GitHub", self)
         github_proyecto.triggered.connect(self.github_proyecto)
         ayuda_menu.addAction(github_proyecto)
-
-    def github_proyecto(self):
-        url = QUrl("https://github.com/SimplementeHoltman/microc-editor")
-        QDesktopServices.openUrl(url)
 
     def actualizar_barra_estado(self):
         mensaje = self.ruta_archivo if self.ruta_archivo else "Nuevo archivo"
@@ -161,7 +156,11 @@ class MainWindow(QMainWindow):
         self.result_edit.append("Compilando... [PENDIENTE]")
 
     def mostrar_ayuda(self):
-        QMessageBox.information(self, "Ayuda", "Consulte la documentación oficial para obtener ayuda.")
+        QMessageBox.information(self, "Ayuda", "Proyecto para el curso de Automatas y Lenguajes, creado por Luis Holtman.")
+
+    def github_proyecto(self):
+        url = QUrl("https://github.com/SimplementeHoltman/microc-editor")
+        QDesktopServices.openUrl(url)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
