@@ -53,5 +53,5 @@ pip install PyQt5
 Para ejecutar la aplicación, utiliza el siguiente comando:
 
 ```bash
-python main.py
+python microc_editor.py
 ```
